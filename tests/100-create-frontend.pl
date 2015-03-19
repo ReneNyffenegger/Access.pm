@@ -11,9 +11,8 @@ my $access = new Access;
 
 #  TODO: This is sort of stupid, first to create the db, then
 #        to open it...
-my $db     = $access -> create_db($db_name);
-my $db     = $access -> open_db  ($db_name);
-
+my $db  = $access -> create_db($db_name);
+$db     = $access -> open_db  ($db_name);
 
 $access -> link_mdb_table($db_backend, 'table_parent');
 $access -> link_mdb_table($db_backend, 'table_child' );

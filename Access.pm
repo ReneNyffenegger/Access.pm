@@ -3,7 +3,7 @@ use strict;
 
 use Win32::OLE;
 
-# TODO use Form;
+use Access::Form;
 
 package Access;
 
@@ -95,8 +95,6 @@ sub link_mdb_table {
   my $self       = shift;
   my $mdb_name   = shift;
   my $table_name = shift;
-
-  print "$table_name\n";
 
   $self->{access}->DoCmd->TransferDatabase(acLink, 'Microsoft Access', $mdb_name, acTable, $table_name, $table_name);
 }
